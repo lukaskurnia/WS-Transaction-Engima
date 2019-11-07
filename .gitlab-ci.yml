@@ -1,5 +1,4 @@
-
-image: node:8.9.0
+image: node:latest
 
 before_script:
   - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
