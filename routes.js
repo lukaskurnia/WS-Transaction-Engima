@@ -9,9 +9,13 @@ module.exports = function(app) {
     app.route('/transactions')
         .get(todoList.transactions);
 
+    app.route('/transactions/:txn_id')
+        .get(todoList.findTxn);
+
     app.route('/transactions')
         .post(todoList.createTxn);
 
     app.route('/transactions')
         .put(todoList.updateTxn);
+    
 };
