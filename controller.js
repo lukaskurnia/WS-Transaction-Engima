@@ -17,6 +17,21 @@ exports.index = function(req, res) {
     response.ok("Welcome to Transaction WS", res)
 }
 
+exports.findTxn = function(req, res) { //Specific Get
+    
+    var txn_id = req.params.txn_id;
+
+    connection.query('SELECT * FROM transaction_info where txn_id = ?',
+    [ txn_id ], 
+    function (error, rows, fields){
+        if(error){
+            console.log(error)
+        } else{
+            response.ok(rows, res)
+        }
+    });
+};
+
 exports.createTxn = function(req, res) { //Post
     
     var user_id = req.body.user_id;
