@@ -8,4 +8,7 @@ module.exports = function(app) {
 
     app.route('/transactions')
         .get(todoList.transactions);
+
+    app.route('/transactions')
+        .post(todoList.createTxn);
 };
