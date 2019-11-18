@@ -35,3 +35,19 @@ exports.createTxn = function(req, res) { //Post
         }
     });
 };
+
+exports.updateTxn = function(req, res) { //Put
+    
+    var txn_id = req.body.txn_id;
+    var status = req.body.txn_status;
+
+    connection.query('UPDATE transaction_info SET txn_status = ? WHERE txn_id = ?',
+    [ status, txn_id ], 
+    function (error, rows, fields){
+        if(error){
+            console.log(error)
+        } else{
+            response.ok("Transaction status changed.", res)
+        }
+    });
+};
