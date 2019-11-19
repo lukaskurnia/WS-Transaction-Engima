@@ -4,7 +4,7 @@ var response = require('./res');
 var connection = require('./conn');
 
 exports.transactions = function(req, res) {
-    connection.query('SELECT * FROM transaction_info', function (error, rows, fields){
+    connection.query('SELECT * FROM transaction_info', function (error, rows ){
         if(error){
             console.log(error)
         } else{
@@ -23,7 +23,7 @@ exports.findTxn = function(req, res) { //Specific Get
 
     connection.query('SELECT * FROM transaction_info where txn_id = ?',
     [ txn_id ], 
-    function (error, rows, fields){
+    function (error, rows, ){
         if(error){
             console.log(error)
         } else{
@@ -42,7 +42,7 @@ exports.createTxn = function(req, res) { //Post
 
     connection.query('INSERT INTO transaction_info (user_id, virtual_acc, movie_id, mov_schedule, seat_number) values (?,?,?,?,?)',
     [user_id, acc, mov_id, movie_schedule, seat_num], 
-    function (error, rows, fields){
+    function (error){
         if(error){
             console.log(error)
         } else{
@@ -58,7 +58,7 @@ exports.updateTxn = function(req, res) { //Put
 
     connection.query('UPDATE transaction_info SET txn_status = ? WHERE txn_id = ?',
     [ status, txn_id ], 
-    function (error, rows, fields){
+    function (error){
         if(error){
             console.log(error)
         } else{
