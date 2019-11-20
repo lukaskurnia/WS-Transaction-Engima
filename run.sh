@@ -1,5 +1,5 @@
 cd ws-transaction
 npm install
-pm2 restart index.js
+pm2 restart server.js
 
 
