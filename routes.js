@@ -9,7 +9,7 @@ module.exports = function(app) {
     app.route('/transactions')
         .get(todoList.transactions);
 
-    app.route('/transactions/:txn_id')
+    app.route('/transactions/:user_id')
         .get(todoList.findTxn);
 
     app.route('/transactions')
