@@ -19,10 +19,10 @@ exports.index = function(req, res) {
 
 exports.findTxn = function(req, res) { //Specific Get
     
-    var txn_id = req.params.txn_id;
+    var user_id = req.params.user_id;
 
-    connection.query('SELECT * FROM transaction_info where txn_id = ?',
-    [ txn_id ], 
+    connection.query('SELECT * FROM transaction_info where user_id = ?',
+    [ user_id ], 
     function (error, rows, ){
         if(error){
             console.log(error)
