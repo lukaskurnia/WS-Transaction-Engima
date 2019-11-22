@@ -42,11 +42,11 @@ exports.createTxn = function(req, res) { //Post
 
     connection.query('INSERT INTO transaction_info (user_id, virtual_acc, movie_id, mov_schedule, seat_number) values (?,?,?,?,?)',
     [user_id, acc, mov_id, movie_schedule, seat_num], 
-    function (error){
+    function (error,rows, ){
         if(error){
-            console.log(error)
+            console.log(error, rows)
         } else{
-            response.ok("Transaction created.", res)
+            response.ok(rows.insertId, res)
         }
     });
 };
