@@ -5,17 +5,18 @@ before_script:
   - npm install
 
 stages:
-  - test
+  - lint
   - deploy
 
 lint:
-  stage: test
+  stage: lint
   script:
     - npm run lint
 
 deployToAWS:
   only:
     - master
+    - develop
   stage: deploy
   script:
     - bash deploy.sh
