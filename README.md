@@ -17,4 +17,9 @@ Mengembalikan seluruh data transaksi pembelian film seorang pengguna Engima.
 
 ## 2. Basis Data
 
-Basis data yang digunakan untuk web service transaksi ini adalah mySql.
+Basis data yang digunakan untuk web service transaksi ini adalah mysql dengan nama basis data adalah ws_transaction. Isi dari basis data tersebut adalah tabel transaction_info dengan atribut-atributnya adalah id transaksi, id user, akun virtual user, id movie, jadwal movie, nomor bangku yang dipesan, waktu transaksi dibuat, dan status transaksi.
+
+## 3. Pembagian Tugas DPPL
+
+1. CI/CD: 13517006
+2. Eksplorasi dan setup mesin deployment: 13517006, 13517084
