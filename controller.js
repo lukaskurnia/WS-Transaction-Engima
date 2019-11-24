@@ -39,9 +39,10 @@ exports.createTxn = function(req, res) { //Post
     var mov_id = req.body.movie_id;
     var movie_schedule = req.body.mov_schedule
     var seat_num = req.body.seat_number;
+    var created_on = req.body.created_on;
 
-    connection.query('INSERT INTO transaction_info (user_id, virtual_acc, movie_id, mov_schedule, seat_number) values (?,?,?,?,?)',
-    [user_id, acc, mov_id, movie_schedule, seat_num], 
+    connection.query('INSERT INTO transaction_info (user_id, virtual_acc, movie_id, mov_schedule, seat_number, created_on) values (?,?,?,?,?,?)',
+    [user_id, acc, mov_id, movie_schedule, seat_num, created_on], 
     function (error,rows, ){
         if(error){
             console.log(error, rows)
