@@ -23,3 +23,10 @@ Basis data yang digunakan untuk web service transaksi ini adalah mysql dengan na
 
 1. CI/CD: 13517006
 2. Eksplorasi dan setup mesin deployment: 13517006, 13517084
+
+## 4. URL Deployment
+
+Berikut ini merupakan URL yang digunakan untuk mendeploy ws-transaction.
+http://107.21.9.12:4000/
+
+
